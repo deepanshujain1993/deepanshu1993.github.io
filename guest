@@ -1,0 +1,34 @@
+<html lang="en">
+  <head>
+    <title>
+      Salesforce Lightnig Out Demo 
+    </title>
+  </head>
+  <body class="slds">
+    <header>
+    </header>
+    <main>
+      <div >
+        <p>Lightning Scheduler flow</p>
+        <div id="leaderboard"></div>
+          </div>
+      </main>
+        <footer>
+        </footer>
+        <script src="https://jnvdsndeiw.force.com/guest/lightning/lightning.out.js"></script>
+        <script>
+          //var url = "<%= ouathLightningURL %>";
+          //var token = "Bearer "+"<%= oauthtoken %>";
+          //console.log(token);
+            $Lightning.use("runtime_appointmentbooking:lightningOutGuest", function() {
+                  $Lightning.createComponent("lightning:flow", {},
+                     "leaderboard",
+                      function(cmp) {
+                         // do some stuff
+                         cmp.startFlow("runtime_appointmentbooking__Guest_Flow");
+              console.log('Component created, do something cool here');
+                      });
+            }, "https://jnvdsndeiw.force.com/guest/");
+        </script>
+  </body>
+</html>
